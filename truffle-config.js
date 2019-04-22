@@ -19,7 +19,7 @@
  */
 
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const infuraKey = provess.env.infuraKey;
+const infuraKey = process.env.infuraKey;
 
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -70,7 +70,8 @@ module.exports = {
     kovan: {
       provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/${infuraKey}`),
       network_id: 42,       // Kovan's id
-      gas: 4000000  
+      gas: 4000000,
+      skipDryRun: true 
     }
 
     // Useful for private networks

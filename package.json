@@ -1,0 +1,12 @@
+{
+  "name": "ant-eggs-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "scripts": {
+    "test": "truffle test"
+  },
+  "dependencies": {
+    "truffle-hdwallet-provider": "1.0.6"
+  }
+}
