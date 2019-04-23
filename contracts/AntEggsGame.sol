@@ -10,13 +10,13 @@ contract AntEggsGame is EggToken, AntToken {
 
     constructor() public {}
 
-    function createNewAnt () public {
+    function createNewAnt () external {
         decreaseEggs();
         (uint totalEggsAvailable, uint percentageOfDying) = createAnt();
         emit CreateAnt(msg.sender, totalEggsAvailable, percentageOfDying);
     }
 
-    function createEggFromAnt (uint antIndex) public {
+    function createEggFromAnt (uint antIndex) external {
         (bool antWasReproduced, uint totalEggsAvailable) = reproduceAnt(antIndex);
         require(antWasReproduced, "The ant died");
         increaseEggs();
